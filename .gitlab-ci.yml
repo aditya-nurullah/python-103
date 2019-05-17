@@ -1,8 +1,9 @@
+image: docker:18
+
 stages:
   - test
-  - deploy
   
 test:
   stage: test
   script:
-  - print("Hello World")
+  - python app.py
