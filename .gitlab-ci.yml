@@ -5,4 +5,5 @@ stages:
 test:
   stage: test
   script:
+  - apt-get install -y python-dev python-pip
   - python app.py test
