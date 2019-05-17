@@ -6,4 +6,6 @@ stages:
 test:
   stage: test
   script:
+  - apt-get update
+  - apt-get install python
   - python app.py
