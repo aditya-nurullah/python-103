@@ -8,13 +8,6 @@ stages:
 before_script:
   - python -V               # Print out python version for debugging
 
-master-build:
-  only:
-    - master
-  stage: build
-  script:
-    - echo Hello master-build
-
 branch-build:
   only:
     - branches
@@ -22,8 +15,18 @@ branch-build:
   script: 
   - echo Hello branch-build
 
+master-build:
+  only:
+    - master
+  stage: build
+  script:
+    - echo Hello master-build
+
+
+
 master-deploy:
   only:
     - master
+  stage: deploy
   script:
     - echo Hello master-deploy
