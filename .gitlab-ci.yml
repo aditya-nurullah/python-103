@@ -10,19 +10,17 @@ before_script:
 
 master-build:
   only:
-   - master@gitlab.excite.co.id:hendro/python-102.git
+   - master@gitlab.excite.co.id/hendro/python-102.git
   stage: build
-  script: make build dependencies
+  script:
+    - print("Hello master-build")
 
 branch-build:
   only:
-    - branches@gitlab.excite.co.id:hendro/python-102.git
+    - branches@gitlab.excite.co.id/hendro/python-102.git
   stage: build
-  script: print("Hello branch-build")
-
-master-build:
-  stage: test
-  script: print("Hello master-build")
+  script: 
+  - print("Hello branch-build")
 
 master-deploy:
   script:
