@@ -1,8 +1,34 @@
 image: python:latest
 
+stages:
+  - build
+  - test
+  - deploy
+
 before_script:
   - python -V               # Print out python version for debugging
 
-test:
+branch-build:
+  
+  only:
+    - branches
+  stage: build
+  script: 
+  - echo Hello branch-build
+
+master-build:
+  only:
+    - master
+  stage: build
   script:
-  - python app.py test
+    - echo Hello master-build
+
+
+
+master-deploy:
+  when: manual
+  only:
+    - master
+  stage: deploy
+  script:
+    - echo Hello master-deploy
