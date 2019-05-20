@@ -9,12 +9,14 @@ before_script:
   - python -V               # Print out python version for debugging
 
 master-build:
-  only: master@gitlab.excite.co.id:hendro/python-102.git
+  only:
+   - master@gitlab.excite.co.id:hendro/python-102.git
   stage: build
   script: make build dependencies
 
 branch-build:
-  only: branches@gitlab.excite.co.id:hendro/python-102.git
+  only:
+    - branches@gitlab.excite.co.id:hendro/python-102.git
   stage: build
   script: print("Hello branch-build")
 
