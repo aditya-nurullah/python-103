@@ -9,6 +9,7 @@ before_script:
   - python -V               # Print out python version for debugging
 
 branch-build:
+  
   only:
     - branches
   stage: build
@@ -25,6 +26,7 @@ master-build:
 
 
 master-deploy:
+  when: manual
   only:
     - master
   stage: deploy
