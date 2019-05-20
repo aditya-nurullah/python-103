@@ -13,17 +13,17 @@ master-build:
     - master
   stage: build
   script:
-    - print("Hello master-build")
+    - echo Hello master-build
 
 branch-build:
   only:
     - branches
   stage: build
   script: 
-  - print("Hello branch-build")
+  - echo Hello branch-build
 
 master-deploy:
   only:
     - master
   script:
-  - print("Hello master-deploy")
+    - echo Hello master-deploy
