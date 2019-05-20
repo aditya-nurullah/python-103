@@ -1,8 +1,28 @@
 image: python:latest
 
+stages:
+  - build
+  - test
+  - deploy
+
 before_script:
   - python -V               # Print out python version for debugging
 
-test:
+master-build:
+  only: master@gitlab.excite.co.id:hendro/python-102.git
+  stage: build
+  script: make build dependencies
+
+branch-build:
+  only: branches@gitlab.excite.co.id:hendro/python-102.git
+  stage: build
+  script: print("Hello branch-build")
+
+master-build:
+  stage: test
+  script: print("Hello master-build")
+
+master-deploy:
   script:
-  - python app.py test
+  - print("Hello master-deploy")
+  
