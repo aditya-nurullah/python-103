@@ -12,6 +12,8 @@ build-app:
   stage: build
   script:
     - docker build -t python-103:latest .
+    - docker image tag python-103:latest registry.excite.co.id:15000/python-103:latest
+    - docker push registry.excite.co.id:15000/python-103:latest
 
 test-app:
   stage: test
