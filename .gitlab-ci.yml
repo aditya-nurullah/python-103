@@ -2,6 +2,7 @@ image: docker:18
 
 stages:
   - build
+  - test
   - deploy
 
 before_script:
@@ -11,6 +12,11 @@ build-app:
   stage: build
   script:
     - docker build -t python-103:latest .
+
+test-app:
+  stage: test
+  script:
+    - echo "This is a test."
 
 deploy-app:
   stage: deploy
