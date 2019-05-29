@@ -7,12 +7,12 @@ stages:
 before_script:
   - docker info
 
-build:
+build-app:
   stage: build
   script:
     - docker build -t python-103:latest .
 
-deploy:
+deploy-app:
   stage: deploy
   script:
     - docker stack deploy -c docker-compose.yml
