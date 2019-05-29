@@ -7,4 +7,5 @@ before_script:
   - docker info
 
 build:
-  - docker build -t python-103:test .
+  script:
+    - docker build -t python-103:test .
