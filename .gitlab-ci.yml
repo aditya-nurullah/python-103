@@ -5,4 +5,4 @@ before_script:
 
 build:
   script:
-    - docker build -t python-103:test .
+    - docker build -t python-103:latest .
