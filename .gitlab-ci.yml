@@ -1,8 +1,19 @@
 image: docker:18
 
+stages:
+  - build
+  - deploy
+
 before_script:
   - docker info
 
 build:
+  stage: build
   script:
     - docker build -t python-103:latest .
+
+deploy:
+  stage: deploy
+  script:
+    - docker stack deploy -c docker-compose.yml
+  only: manual
