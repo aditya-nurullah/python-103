@@ -3,4 +3,7 @@ version: '3'
 services:
   app:
     image: python-103:latest
-    
+    deployment:
+      constraints:
+        placement:
+          - node.hostname = docker-test01
