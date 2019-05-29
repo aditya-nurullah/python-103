@@ -21,4 +21,5 @@ test-app:
 deploy-app:
   stage: deploy
   script:
-    - docker stack deploy -c docker-compose.yml
+    - docker stack deploy -c docker-compose.yml python-103-stack
+  when: manual
