@@ -20,7 +20,5 @@ test-app:
 
 deploy-app:
   stage: deploy
-  only: 
-    - manual
   script:
     - docker stack deploy -c docker-compose.yml
