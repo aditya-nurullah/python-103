@@ -1,8 +1,5 @@
 image: docker:18
 
-stages:
-  - build
-
 before_script:
   - docker info
 
