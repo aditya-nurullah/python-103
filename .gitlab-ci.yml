@@ -1,31 +1,10 @@
-image: python:3.7.3
+image: docker:18
 
 stages:
   - build
-  - test
-  - deploy
 
 before_script:
-  - python -V               # Print out python version for debugging
+  - docker info
 
-branch-build:
-  only:
-    - branches
-  stage: build
-  script: 
-  - python app.py
-
-master-build:
-  only:
-    - master
-  stage: build
-  script:
-    - echo Hello master-build
-
-master-deploy:
-  when: manual
-  only:
-    - master
-  stage: deploy
-  script:
-    - echo Hello master-deploy
+build:
+  - docker build -t python-103:test .
