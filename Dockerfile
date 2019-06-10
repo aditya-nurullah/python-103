@@ -1,6 +1,8 @@
 FROM ubuntu:18.04
-RUN mkdir -p /usr/src/app
-WORKDIR /usr/src/app
-COPY . /usr/src/app
-RUN apt-get update && apt-get install -y python3
-CMD [ "/usr/bin/python3", "/usr/src/app/app.py" ]
+RUN apt-get update -y
+RUN apt-get install -y python-pip python-dev build-essential
+COPY . /app
+WORKDIR /app
+RUN pip install -r requirements.txt
+ENTRYPOINT ["python"]
+CMD ["app.py"]
