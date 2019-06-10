@@ -13,6 +13,10 @@ def hello():
 def members():
     return "Members"
 
+@app.route("/ping")
+def ping():
+    return "Pong!"
+
 if __name__ == "__main__":
   app.run(
     host="0.0.0.0",
