@@ -7,3 +7,5 @@ services:
       placement:
         constraints:
           - node.hostname == docker-test01
+    ports:
+      - 5000:5000
