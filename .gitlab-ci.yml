@@ -14,6 +14,7 @@ before_script:
 build-app:
   stage: build
   script:
+    - echo $CI_PROJECT_NAME:$CI_COMMIT_REF_NAME
     - docker build -t $CI_PROJECT_NAME:$CI_COMMIT_REF_NAME .
     - docker image tag $CI_PROJECT_NAME:$CI_COMMIT_REF_NAME $REGISTRY/$CI_PROJECT_NAME:$CI_COMMIT_REF_NAME
     - docker push $REGISTRY/$CI_PROJECT_NAME:$CI_COMMIT_REF_NAME
