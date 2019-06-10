@@ -2,7 +2,7 @@ version: '3'
 
 services:
   app:
-    image: registry.excite.co.id:15000/python-103:latest
+    image: registry.excite.co.id:15000/python-103:feature-web-api
     deploy:
       placement:
         constraints:
