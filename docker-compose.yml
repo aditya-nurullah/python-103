@@ -2,8 +2,10 @@ version: '3'
 
 services:
   app:
-    image: registry.excite.co.id:15000/python-103:latest
+    image: registry.excite.co.id:15000/python-103:master
     deploy:
       placement:
         constraints:
           - node.hostname == docker-test01
+    ports:
+      - 5000:5000
