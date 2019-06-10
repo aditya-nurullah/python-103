@@ -10,11 +10,12 @@ stages:
 
 before_script:
   - docker info
+  - echo Registry = $REGISTRY
+  - echo Project name = $CI_PROJECT_NAME:$CI_COMMIT_REF_NAME
 
 build-app:
   stage: build
   script:
-    - echo $CI_PROJECT_NAME:$CI_COMMIT_REF_NAME
     - docker build -t $CI_PROJECT_NAME:$CI_COMMIT_REF_NAME .
     - docker image tag $CI_PROJECT_NAME:$CI_COMMIT_REF_NAME $REGISTRY/$CI_PROJECT_NAME:$CI_COMMIT_REF_NAME
     - docker push $REGISTRY/$CI_PROJECT_NAME:$CI_COMMIT_REF_NAME
