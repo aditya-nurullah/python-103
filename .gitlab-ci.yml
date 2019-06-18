@@ -10,6 +10,8 @@ stages:
 
 before_script:
   - docker info
+  - echo Registry = $REGISTRY
+  - echo Project name = $CI_PROJECT_NAME:$CI_COMMIT_REF_NAME
 
 build-app:
   stage: build
